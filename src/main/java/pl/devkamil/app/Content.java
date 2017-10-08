@@ -4,14 +4,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class Content {
 
-    RestTemplate rest =  new RestTemplate();
+    RestTemplate restTemplate =  new RestTemplate();
     final String url = "https://api.github.com/users/octocat";
-    Map<String, Object> res = rest.getForObject(url, Map.class, new HashMap<>());
 
-    String login = (String) res.get("login");
+    RestContent restContent = restTemplate.getForObject(url, RestContent.class, new HashMap<>());
+
+    String jsonContent = restContent.toString();
+
 }
