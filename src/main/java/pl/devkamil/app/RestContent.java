@@ -14,7 +14,7 @@ public class RestContent {
 
     @Override
     public String toString() {
-        return "{" + 
+        return "{" +
                 "id='" + id + '\'' +
                 ", login='" + login + '\'' +
                 ", name='" + name + '\'' +
@@ -24,5 +24,3 @@ public class RestContent {
                 '}';
     }
 }
-
-

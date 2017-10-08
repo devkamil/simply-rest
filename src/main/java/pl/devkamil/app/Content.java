@@ -1,18 +1,19 @@
 package pl.devkamil.app;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 
-@Component
+@Service
 public class Content {
 
-    RestTemplate restTemplate =  new RestTemplate();
-    final String url = "https://api.github.com/users/octocat";
+    public String showContent(String login) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "https://api.github.com/users/" + login;
 
-    RestContent restContent = restTemplate.getForObject(url, RestContent.class, new HashMap<>());
+        RestContent restContent = restTemplate.getForObject(url, RestContent.class, new HashMap<>());
 
-    String jsonContent = restContent.toString();
-
+        return restContent.toString();
+    }
 }
