@@ -98,34 +98,4 @@ public class User {
         return result;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{").append("<br>");
-        sb.append("\"id\": ").append("\"" + id + "\"").append("<br>");
-        sb.append("\"login\": ").append("\"" + login + "\"").append("<br>");
-        sb.append("\"name\": ").append("\"" + name + "\"").append("<br>");
-        sb.append("\"type\": ").append("\"" + type + "\"").append("<br>");
-        sb.append("\"avatarUrl\": ").append("\"" + avatarUrl + "\"").append("<br>");
-        sb.append("\"createdAt\": ").append("\"" + createdAt + "\"").append("<br>");
-        sb.append("}").append("<br>");
-        return sb.toString();
-    }
-
-
-
-//    @Override
-//    public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("{");
-//        sb.append(System.getProperty("line.separator"));
-//        sb.append("\"id\": ").append("\"" + id + "\"").append(System.getProperty("line.separator"));
-//        sb.append("\"login\": ").append("\"" + login + "\"").append(System.getProperty("line.separator"));
-//        sb.append("\"name\": ").append("\"" + name + "\"").append(System.getProperty("line.separator"));
-//        sb.append("\"type\": ").append("\"" + type + "\"").append(System.getProperty("line.separator"));
-//        sb.append("\"avatarUrl\": ").append("\"" + avatarUrl + "\"").append(System.getProperty("line.separator"));
-//        sb.append("\"createdAt\": ").append("\"" + createdAt + "\"").append(System.getProperty("line.separator"));
-//        sb.append("}").append(System.getProperty("line.separator"));
-//        return sb.toString();
-//    }
 }

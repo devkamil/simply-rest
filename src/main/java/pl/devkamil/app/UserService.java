@@ -17,14 +17,14 @@ public class UserService {
     @Autowired
     private Environment env;
 
-    public String getUserInfo(String login) {
+    public User getUserInfo(String login) {
 
         RestTemplate restTemplate = new RestTemplate();
         final String url = (env.getProperty("spring.datasource.url")) + login;
 
         User user  = restTemplate.getForObject(url, User.class, new HashMap<>());
 
-        return user.toString();
+        return user;
     }
 
 
