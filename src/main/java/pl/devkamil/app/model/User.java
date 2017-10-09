@@ -1,4 +1,4 @@
-package pl.devkamil.app;
+package pl.devkamil.app.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,14 +6,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
-    @JsonProperty("id") private long id;
-    @JsonProperty("login")  private String login;
-    @JsonProperty("name") private String name;
-    @JsonProperty("type") private String type;
-    @JsonProperty("avatar_url") private String avatarUrl;
-    @JsonProperty("created_at") private String createdAt;
+    @JsonProperty("id")
+    private long id;
 
-    public User() {}
+    @JsonProperty("login")
+    private String login;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("type")
+    private String type;
+
+    @JsonProperty("avatar_url")
+    private String avatarUrl;
+
+    @JsonProperty("created_at")
+    private String createdAt;
+
+    public User() {
+    }
 
     public User(long id, String login, String name, String type, String avatarUrl, String createdAt) {
         this.id = id;
