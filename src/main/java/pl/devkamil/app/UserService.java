@@ -1,19 +1,31 @@
 package pl.devkamil.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 
+@Configuration
+@PropertySource("classpath:application.properties")
 @Service
-public class Content {
+public class UserService {
 
-    public String showContent(String login) {
+    @Autowired
+    private Environment env;
+
+    public User getUserInfo(String login) {
+
         RestTemplate restTemplate = new RestTemplate();
-        final String url = "https://api.github.com/users/" + login;
+        final String url = (env.getProperty("spring.datasource.url")) + login;
 
-        RestContent restContent = restTemplate.getForObject(url, RestContent.class, new HashMap<>());
+        User user  = restTemplate.getForObject(url, User.class, new HashMap<>());
 
-        return restContent.toString();
+        return user;
     }
+
+
 }
