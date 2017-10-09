@@ -3,6 +3,9 @@ package pl.devkamil.app.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * This class defines a 'User' object
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 

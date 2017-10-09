@@ -9,14 +9,24 @@ import pl.devkamil.app.exception.CustomException;
 import pl.devkamil.app.model.User;
 import pl.devkamil.app.service.UserService;
 
+/**
+ *  Controller in REST Service
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * This object returns a 'User" object
+     */
     @Autowired
     private UserService userService;
 
-
+    /**
+     * This method is get 'User' object from 'UserService' class
+     * @param login User name
+     * @return 'User' object from API with the given 'login'
+     */
     @GetMapping(value = "/info/{login}")
     public @ResponseBody
     ResponseEntity userInfo(@PathVariable String login) {

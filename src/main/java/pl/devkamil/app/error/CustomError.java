@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
+/**
+ * Class which error is saving as object with params: 'code', 'message', 'timestamp'
+ */
 public class CustomError {
 
     @JsonProperty

@@ -2,6 +2,9 @@ package pl.devkamil.app.exception;
 
 import org.springframework.http.HttpStatus;
 
+/**
+ * Class which extends 'Exception' class; it stores a params: 'httpStatus' and 'message'
+ */
 public class CustomException extends Exception {
 
     private HttpStatus httpStatus;

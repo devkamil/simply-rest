@@ -16,6 +16,9 @@ import pl.devkamil.app.model.User;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
+/**
+ * This class is creating 'User' object and supporting exceptions
+ */
 @Configuration
 @PropertySource("classpath:application.properties")
 @Service
@@ -25,15 +28,26 @@ public class UserService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
     private String url;
 
+    /**
+     * This object representing the environment in which the current application is running
+     */
     @Autowired
     private Environment env;
 
+    /**
+     * This method is running at the beginning of application; this method gets URL of API from .properties file
+     */
     @PostConstruct
     public void init() {
         url = (env.getProperty(API_URL_PROPERTIES));
     }
 
-
+    /**
+     * This method returns 'User" object or 'Exception' to Controller
+     * @param login Login of User which we GET from API
+     * @return 'User' object
+     * @throws CustomException An exception where the exception code and the exception message are written
+     */
     public User getUserInfo(String login) throws CustomException {
 
         try {
