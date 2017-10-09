@@ -12,7 +12,7 @@ public class UserController {
 
 
     @GetMapping("/info/{login}")
-    public @ResponseBody User userInfo(@PathVariable String login) {
+    public @ResponseBody String userInfo(@PathVariable String login) {
         return userService.getUserInfo(login);
     }
 }
