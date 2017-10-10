@@ -17,7 +17,7 @@ import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
 /**
- * This class is creating 'User' object and supporting exceptions
+ * This class is a Service to connect to GitHubAPI, get info about custom user and supporting exceptions
  */
 @Configuration
 @PropertySource("classpath:application.properties")
@@ -30,12 +30,13 @@ public class UserService {
 
     /**
      * This object representing the environment in which the current application is running
+     * and is used to get URL adress to GitHubAPI from '.properties' file
      */
     @Autowired
     private Environment env;
 
     /**
-     * This method is running at the beginning of application; this method gets URL of API from .properties file
+     * This method is running at the beginning of application; this method gets URL of API from '.properties' file
      */
     @PostConstruct
     public void init() {
@@ -43,7 +44,8 @@ public class UserService {
     }
 
     /**
-     * This method returns 'User" object or 'Exception' to Controller
+     * This method is getting info about user from GiTHubAPI.
+     * If user not exist or another error will occur, an exception is thrown.
      * @param login Login of User which we GET from API
      * @return 'User' object
      * @throws CustomException An exception where the exception code and the exception message are written

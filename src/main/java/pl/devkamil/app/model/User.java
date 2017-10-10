@@ -27,17 +27,6 @@ public class User {
     @JsonProperty("created_at")
     private String createdAt;
 
-    public User() {
-    }
-
-    public User(long id, String login, String name, String type, String avatarUrl, String createdAt) {
-        this.id = id;
-        this.login = login;
-        this.name = name;
-        this.type = type;
-        this.avatarUrl = avatarUrl;
-        this.createdAt = createdAt;
-    }
 
     public long getId() {
         return id;
@@ -84,6 +73,19 @@ public class User {
     }
 
     public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+
+    public User() {
+    }
+
+    public User(long id, String login, String name, String type, String avatarUrl, String createdAt) {
+        this.id = id;
+        this.login = login;
+        this.name = name;
+        this.type = type;
+        this.avatarUrl = avatarUrl;
         this.createdAt = createdAt;
     }
 

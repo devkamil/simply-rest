@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 /**
- * Class which error is saving as object with params: 'code', 'message', 'timestamp'
+ * Class with error information: 'code' - code of error; 'message' - message of error; 'timestamp' - date of error
  */
 public class CustomError {
 
@@ -39,7 +39,6 @@ public class CustomError {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
 
     public CustomError(Integer code, String message) {
         this.code = code;

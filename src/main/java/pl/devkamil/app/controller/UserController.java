@@ -10,14 +10,14 @@ import pl.devkamil.app.model.User;
 import pl.devkamil.app.service.UserService;
 
 /**
- *  Controller in REST Service
+ *  Controller in simply-rest application with one GET method to find info about user in GitHubAPI
  */
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
     /**
-     * This object returns a 'User" object
+     * This object is a Service used to get data about user
      */
     @Autowired
     private UserService userService;
@@ -25,11 +25,10 @@ public class UserController {
     /**
      * This method is get 'User' object from 'UserService' class
      * @param login User name
-     * @return 'User' object from API with the given 'login'
+     * @return 'User' object from API with the given 'login' in wrapper object of ResponseEntity class
      */
     @GetMapping(value = "/info/{login}")
-    public @ResponseBody
-    ResponseEntity userInfo(@PathVariable String login) {
+    @ResponseBody public ResponseEntity userInfo(@PathVariable String login) {
         User user;
         try {
             user = userService.getUserInfo(login);
