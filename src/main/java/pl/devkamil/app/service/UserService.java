@@ -68,7 +68,7 @@ public class UserService {
             throw new CustomException(httpStatus, message);
 
         } catch (Exception ex) {
-            LOGGER.error("Error while connecting to GitHubAPI: ", ex);
+            LOGGER.error("General error in 'simply-rest' application: ", ex);
             String message = ex.getMessage();
 
             throw new CustomException(HttpStatus.INTERNAL_SERVER_ERROR, message);
