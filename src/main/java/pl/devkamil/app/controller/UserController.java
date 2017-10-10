@@ -28,7 +28,7 @@ public class UserController {
      * @return 'User' object from API with the given 'login' in wrapper object of ResponseEntity class
      */
     @GetMapping(value = "/info/{login}")
-    @ResponseBody public ResponseEntity userInfo(@PathVariable String login) {
+    public @ResponseBody ResponseEntity userInfo(@PathVariable String login) {
         User user;
         try {
             user = userService.getUserInfo(login);
